@@ -1,0 +1,240 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DBBBE8770AAD629900A45065 /* VoikkoSpellService.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DBBBE8440AAD59D400A45065 /* VoikkoSpellService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoikkoSpellService.h; sourceTree = "<group>"; };
+		DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoikkoSpellService.m; sourceTree = "<group>"; };
+		DBBBE8540AAD600100A45065 /* VoikkoSpellService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoikkoSpellService.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBBBE8570AAD600100A45065 /* VoikkoSpellService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "VoikkoSpellService-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DBBBE8520AAD600100A45065 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DBBBE8360AAD593300A45065 = {
+			isa = PBXGroup;
+			children = (
+				DBBBE8440AAD59D400A45065 /* VoikkoSpellService.h */,
+				DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */,
+				DBBBE8550AAD600100A45065 /* Products */,
+				DBBBE8570AAD600100A45065 /* VoikkoSpellService-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		DBBBE8550AAD600100A45065 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DBBBE8540AAD600100A45065 /* VoikkoSpellService.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DBBBE8530AAD600100A45065 /* VoikkoSpellService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBBBE8580AAD600100A45065 /* Build configuration list for PBXNativeTarget "VoikkoSpellService" */;
+			buildPhases = (
+				DBBBE8500AAD600100A45065 /* Resources */,
+				DBBBE8510AAD600100A45065 /* Sources */,
+				DBBBE8520AAD600100A45065 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "VoikkoSpellService-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = VoikkoSpellService;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			dependencies = (
+			);
+			name = VoikkoSpellService;
+			productName = VoikkoSpellService;
+			productReference = DBBBE8540AAD600100A45065 /* VoikkoSpellService.app */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.VoikkoSpellService</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DBBBE8380AAD593300A45065 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = DBBBE8390AAD593300A45065 /* Build configuration list for PBXProject "VoikkoSpellService" */;
+			buildStyles = (
+			);
+			hasScannedForEncodings = 0;
+			mainGroup = DBBBE8360AAD593300A45065;
+			productRefGroup = DBBBE8550AAD600100A45065 /* Products */;
+			projectDirPath = "";
+			targets = (
+				DBBBE8530AAD600100A45065 /* VoikkoSpellService */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DBBBE8500AAD600100A45065 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DBBBE8510AAD600100A45065 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBBBE8770AAD629900A45065 /* VoikkoSpellService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DBBBE83A0AAD593300A45065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		DBBBE83B0AAD593300A45065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		DBBBE8590AAD600100A45065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "VoikkoSpellService-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = VoikkoSpellService;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		DBBBE85A0AAD600100A45065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "VoikkoSpellService-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = VoikkoSpellService;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DBBBE8390AAD593300A45065 /* Build configuration list for PBXProject "VoikkoSpellService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBBBE83A0AAD593300A45065 /* Debug */,
+				DBBBE83B0AAD593300A45065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBBBE8580AAD600100A45065 /* Build configuration list for PBXNativeTarget "VoikkoSpellService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBBBE8590AAD600100A45065 /* Debug */,
+				DBBBE85A0AAD600100A45065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DBBBE8380AAD593300A45065 /* Project object */;
+}

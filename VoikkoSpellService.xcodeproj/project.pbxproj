@@ -8,13 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		DBBBE8770AAD629900A45065 /* VoikkoSpellService.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */; };
+		DBD8F6B90AB1739400F5D3F9 /* libvoikko.1.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8F6B80AB1739400F5D3F9 /* libvoikko.1.1.0.dylib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		DB5D994B0AB145310066DE6B /* Development */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Development;
+		};
+		DB5D994C0AB145310066DE6B /* Deployment */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Deployment;
+		};
+/* End PBXBuildStyle section */
 
 /* Begin PBXFileReference section */
 		DBBBE8440AAD59D400A45065 /* VoikkoSpellService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoikkoSpellService.h; sourceTree = "<group>"; };
 		DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoikkoSpellService.m; sourceTree = "<group>"; };
 		DBBBE8540AAD600100A45065 /* VoikkoSpellService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoikkoSpellService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBBE8570AAD600100A45065 /* VoikkoSpellService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "VoikkoSpellService-Info.plist"; sourceTree = "<group>"; };
+		DBD8F6B80AB1739400F5D3F9 /* libvoikko.1.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvoikko.1.1.0.dylib; path = ../../../inst/lib/libvoikko.1.1.0.dylib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -22,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBD8F6B90AB1739400F5D3F9 /* libvoikko.1.1.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -31,6 +51,7 @@
 		DBBBE8360AAD593300A45065 = {
 			isa = PBXGroup;
 			children = (
+				DBD8F6B80AB1739400F5D3F9 /* libvoikko.1.1.0.dylib */,
 				DBBBE8440AAD59D400A45065 /* VoikkoSpellService.h */,
 				DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */,
 				DBBBE8550AAD600100A45065 /* Products */,
@@ -115,7 +136,11 @@
 		DBBBE8380AAD593300A45065 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = DBBBE8390AAD593300A45065 /* Build configuration list for PBXProject "VoikkoSpellService" */;
+			buildSettings = {
+			};
 			buildStyles = (
+				DB5D994B0AB145310066DE6B /* Development */,
+				DB5D994C0AB145310066DE6B /* Deployment */,
 			);
 			hasScannedForEncodings = 0;
 			mainGroup = DBBBE8360AAD593300A45065;
@@ -174,8 +199,16 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = (
+					"~/voikko/inst/include",
+					"$(HEADER_SEARCH_PATHS)",
+				);
 				INFOPLIST_FILE = "VoikkoSpellService-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"~/voikko/inst/lib",
+					"$(LIBRARY_SEARCH_PATHS)",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -183,6 +216,7 @@
 					AppKit,
 				);
 				PREBINDING = NO;
+				PRELINK_LIBS = "$(PRELINK_LIBS)";
 				PRODUCT_NAME = VoikkoSpellService;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -198,8 +232,16 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = (
+					"~/voikko/inst/include",
+					"$(HEADER_SEARCH_PATHS)",
+				);
 				INFOPLIST_FILE = "VoikkoSpellService-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"~/voikko/inst/lib",
+					"$(LIBRARY_SEARCH_PATHS)",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -207,6 +249,7 @@
 					AppKit,
 				);
 				PREBINDING = NO;
+				PRELINK_LIBS = "$(PRELINK_LIBS)";
 				PRODUCT_NAME = VoikkoSpellService;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;

@@ -12,9 +12,8 @@
 @interface VoikkoSpellService : NSObject {
 
 }
-
-- (NSRange) spellServer:findMisspelledWordInString: (NSString*)stringToCheck language: (NSString*)language
-                                                    wordCount: (int*)wordCount countOnly: (BOOL)countOnly;
+- (NSRange)spellServer:(NSSpellServer *)sender findMisspelledWordInString:(NSString *)stringToCheck language:(NSString *)language
+                                                    wordCount:(int *)wordCount countOnly:(BOOL)countOnly;
 
 
 @end

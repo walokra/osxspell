@@ -5,20 +5,33 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
+	<string>VoikkoSpellService</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.VoikkoSpellService</string>
+	<string>org.hunspell-fi.VoikkoSpellService</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
-	<string>APPL</string>
+	<string>BNDL</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSService</key>
+        <array>
+                <dict>
+                        <key>NSExecutable</key>
+                        <string>VoikkoSpellService</string>
+                        <key>NSLanguages</key>
+                        <array>
+                                <string>fi_FI</string>
+                        </array>
+                        <key>NSPortName</key>
+                        <string>VoikkoSpellService</string>
+                        <key>NSSpellChecker</key>
+                        <string>Voikko</string>
+                </dict>
+        </array>
 </dict>
 </plist>

@@ -18,7 +18,7 @@
 	<string>1.0</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>NSService</key>
+	<key>NSServices</key>
         <array>
                 <dict>
                         <key>NSExecutable</key>

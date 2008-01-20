@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>VoikkoSpellService</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.hunspell-fi.VoikkoSpellService</string>
+	<string>org.puimula.VoikkoSpellService</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>

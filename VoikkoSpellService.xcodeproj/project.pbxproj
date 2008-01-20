@@ -15,7 +15,6 @@
 		DBBBE8440AAD59D400A45065 /* VoikkoSpellService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoikkoSpellService.h; sourceTree = "<group>"; };
 		DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoikkoSpellService.m; sourceTree = "<group>"; };
 		DBBBE8540AAD600100A45065 /* VoikkoSpellService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoikkoSpellService.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBBBE8570AAD600100A45065 /* VoikkoSpellService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "VoikkoSpellService-Info.plist"; sourceTree = "<group>"; };
 		DBD8F6B80AB1739400F5D3F9 /* libvoikko.1.6.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvoikko.1.6.0.dylib; path = ../voikko/lib/libvoikko.1.6.0.dylib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -38,7 +37,6 @@
 				DBBBE8440AAD59D400A45065 /* VoikkoSpellService.h */,
 				DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */,
 				DBBBE8550AAD600100A45065 /* Products */,
-				DBBBE8570AAD600100A45065 /* VoikkoSpellService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +120,7 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				HEADER_SEARCH_PATHS = "~/voikko/include";
+				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = "~/voikko/lib";
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 			};
@@ -142,7 +141,7 @@
 					"~/voikko/inst/include",
 					"$(HEADER_SEARCH_PATHS)",
 				);
-				INFOPLIST_FILE = "VoikkoSpellService-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"~/voikko/inst/lib",
@@ -175,7 +174,7 @@
 					"~/voikko/inst/include",
 					"$(HEADER_SEARCH_PATHS)",
 				);
-				INFOPLIST_FILE = "VoikkoSpellService-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"~/voikko/inst/lib",

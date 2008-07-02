@@ -1,9 +1,19 @@
-//
-//  VoikkoSpellService.m
-//  VoikkoSpellService
-//
-//  Copyright 2006 - 2008 Harri Pitkanen. License: GPL
-//
+/* VoikkoSpellService: Finnish spelling and grammar checker service for OS X.
+ * Copyright (C) 2006 - 2008 Harri Pitkanen <hatapitk@iki.fi>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *****************************************************************************/
 
 #import <objc/objc-runtime.h>
 #import "VoikkoSpellService.h"
@@ -54,6 +64,22 @@ bool voikkoCheckWord(NSString * word) {
 	}
 	voikko_free_suggest_cstr(suggestions);
 	return arr;
+}
+
+- (NSRange)spellServer:(NSSpellServer *)sender checkGrammarInString:(NSString *)string language:(NSString *)language
+                                               details:(NSArray **)outDetails {
+	const char * cstr = [string cStringUsingEncoding:NSUTF8StringEncoding];
+	if (!cstr) return NSMakeRange(NSNotFound, 0);
+	const size_t length = strlen(cstr);
+	voikko_grammar_error ge = voikko_next_grammar_error_cstr(voikko_handle, cstr, length, 0);
+	if (ge.error_code == 0) return NSMakeRange(NSNotFound, 0);
+	NSArray * keys = [NSArray arrayWithObjects:NSGrammarRange, NSGrammarUserDescription, NSGrammarCorrections, nil];
+	NSString * ra = NSStringFromRange(NSMakeRange(ge.startpos, ge.errorlen));
+	NSString * descr = [NSString stringWithUTF8String:voikko_error_message_cstr(ge.error_code, "fi_FI")];
+	NSArray * objects = [NSArray arrayWithObjects:ra, descr, [NSArray arrayWithObjects:nil], nil];
+	NSDictionary * dictionary = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+	*outDetails = [NSArray arrayWithObjects:dictionary];
+	return NSMakeRange(ge.startpos, ge.errorlen);
 }
 
 @end

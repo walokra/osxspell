@@ -2,7 +2,7 @@
 //  VoikkoSpellService.m
 //  VoikkoSpellService
 //
-//  Copyright 2006 Harri Pitkanen. License: GPL
+//  Copyright 2006 - 2008 Harri Pitkanen. License: GPL
 //
 
 #import <objc/objc-runtime.h>
@@ -20,40 +20,42 @@ bool voikkoCheckWord(NSString * word) {
 
 - (NSRange)spellServer:(NSSpellServer *)sender findMisspelledWordInString: (NSString*)stringToCheck language: (NSString*)language
                                                     wordCount: (int*)wordCount countOnly: (BOOL)countOnly {
-	size_t i;
-	size_t strlen = [stringToCheck length];
-	size_t word_start = 0;
-	size_t word_length;
-	for (i = 0; i < strlen; i++) {
-		if ([stringToCheck characterAtIndex:i] == ' ') {
-			if (word_start + 1 >= i) {
-				word_start = i + 1;
-				continue;
-			}
-			if ([stringToCheck characterAtIndex:(i-1)] == ',' ||
-			    [stringToCheck characterAtIndex:(i-1)] == '?' ||
-				[stringToCheck characterAtIndex:(i-1)] == '!' ||
-				[stringToCheck characterAtIndex:(i-1)] == '"' ||
-				[stringToCheck characterAtIndex:(i-1)] == '\'') word_length = i - word_start - 1;
-			else word_length = i - word_start;
-			// We have a real word to be checked
-			if (!voikkoCheckWord([stringToCheck substringWithRange:NSMakeRange(word_start, word_length)]))
-				return NSMakeRange(word_start, word_length);
-			word_start = i + 1;
+	const char * cstr = [stringToCheck cStringUsingEncoding:NSUTF8StringEncoding];
+	const size_t clen = strlen(cstr);
+	size_t cstart = 0;
+	size_t ustart = 0;
+	size_t utokenlen;
+	while (1) {
+		enum voikko_token_type t = voikko_next_token_cstr(voikko_handle, cstr + cstart, clen - cstart, &utokenlen);
+		NSString * token = [stringToCheck substringWithRange:NSMakeRange(ustart, utokenlen)];
+		size_t ctokenlen = strlen([token UTF8String]);
+		if (t == TOKEN_NONE) break;
+		if (t == TOKEN_WORD) {
+			if (!voikkoCheckWord(token))
+				return NSMakeRange(ustart, utokenlen);
 		}
-	}
-	if (word_start + 1 < strlen) {
-		if ([stringToCheck characterAtIndex:(strlen-1)] == ','||
-			    [stringToCheck characterAtIndex:(i-1)] == '?' ||
-				[stringToCheck characterAtIndex:(i-1)] == '!' ||
-				[stringToCheck characterAtIndex:(i-1)] == '"' ||
-				[stringToCheck characterAtIndex:(i-1)] == '\'') word_length = strlen - word_start - 1;
-		else word_length = i - word_start;
-		if (!voikkoCheckWord([stringToCheck substringWithRange:NSMakeRange(word_start, word_length)]))
-			return NSMakeRange(word_start, word_length);
+		ustart += utokenlen;
+		cstart += ctokenlen;
 	}
 	return NSMakeRange(NSNotFound , 0);
 }
+
+- (NSArray *)spellServer:(NSSpellServer *)sender suggestGuessesForWord:(NSString *)word
+                                                 inLanguage:(NSString *)language {
+	const char * cstr = [word cStringUsingEncoding:NSUTF8StringEncoding];
+	char ** suggestions = voikko_suggest_cstr(voikko_handle, cstr);
+	if (!suggestions) return 0;
+	NSMutableArray * arr = [[NSMutableArray alloc] init];
+	char ** s = suggestions;
+	while (*s) {
+		NSString * ns = [NSString stringWithUTF8String:*s];
+		[arr addObject:ns];
+		s++;
+	}
+	voikko_free_suggest_cstr(suggestions);
+	return arr;
+}
+
 @end
 
 int main() {
@@ -61,6 +63,7 @@ int main() {
 		fprintf(stderr, "voikko_init failed\n");
 		exit(1);
 	}
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	voikko_set_bool_option(voikko_handle, VOIKKO_OPT_IGNORE_DOT, 1);
 	voikko_set_bool_option(voikko_handle, VOIKKO_OPT_IGNORE_NUMBERS, 1);
 	NSSpellServer *aServer = [[NSSpellServer alloc] init];
@@ -77,5 +80,6 @@ int main() {
 	else {
 		fprintf(stderr, "Voikko cannot be used for this language.\n");
 	}
+	[pool release];
 }
 

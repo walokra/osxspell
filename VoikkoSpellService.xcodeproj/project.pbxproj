@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 44;
+	objectVersion = 42;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -74,7 +74,7 @@
 		DBBBE8380AAD593300A45065 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = DBBBE8390AAD593300A45065 /* Build configuration list for PBXProject "VoikkoSpellService" */;
-			compatibilityVersion = "Xcode 3.0";
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 0;
 			mainGroup = DBBBE8360AAD593300A45065;
 			productRefGroup = DBBBE8550AAD600100A45065 /* Products */;
@@ -147,6 +147,7 @@
 					"~/voikko/inst/lib",
 					"$(LIBRARY_SEARCH_PATHS)",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -180,6 +181,7 @@
 					"~/voikko/inst/lib",
 					"$(LIBRARY_SEARCH_PATHS)",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,

@@ -66,6 +66,8 @@ bool voikkoCheckWord(NSString * word) {
 	return arr;
 }
 
+/* Grammar checking not available before Mac OS X 10.5. */
+#if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
 - (NSRange)spellServer:(NSSpellServer *)sender checkGrammarInString:(NSString *)string language:(NSString *)language
                                                details:(NSArray **)outDetails {
 	const char * cstr = [string cStringUsingEncoding:NSUTF8StringEncoding];
@@ -81,6 +83,7 @@ bool voikkoCheckWord(NSString * word) {
 	*outDetails = [NSArray arrayWithObjects:dictionary];
 	return NSMakeRange(ge.startpos, ge.errorlen);
 }
+#endif // MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
 
 @end
 

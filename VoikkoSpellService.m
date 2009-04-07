@@ -55,7 +55,7 @@ bool voikkoCheckWord(NSString * word) {
 	const char * cstr = [word cStringUsingEncoding:NSUTF8StringEncoding];
 	char ** suggestions = voikko_suggest_cstr(voikko_handle, cstr);
 	if (!suggestions) return 0;
-	NSMutableArray * arr = [[NSMutableArray alloc] init];
+	NSMutableArray * arr = [NSMutableArray array];
 	char ** s = suggestions;
 	while (*s) {
 		NSString * ns = [NSString stringWithUTF8String:*s];

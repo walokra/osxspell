@@ -3,19 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
+	<string>Finnish</string>
 	<key>CFBundleExecutable</key>
 	<string>VoikkoSpellService</string>
 	<key>CFBundleIdentifier</key>
 	<string>org.puimula.VoikkoSpellService</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>VoikkoSpellService</string>
 	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0a1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1000.01.01</string>
 	<key>LSBackgroundOnly</key>
 	<string>1</string>
 	<key>NSPrincipalClass</key>
@@ -27,7 +31,7 @@
 			<string>VoikkoSpellService</string>
 			<key>NSLanguages</key>
 			<array>
-				<string>fi_FI</string>
+				<string>Finnish</string>				
 			</array>
 			<key>NSPortName</key>
 			<string>VoikkoSpellService</string>

@@ -1,0 +1,33 @@
+﻿Yleistä
+-------
+VoikkoSpellService - suomen kielen oikoluku -järjestelmäkomponentti OS X:lle
+
+Voikko on ohjelmisto suomen kielen oikeinkirjoituksen ja kieliopin tarkistamiseen sekä tavutukseen.
+
+Tämä versio on tarkoitettu 32-bittisille Intel-alustaisille Mac OS X -käyttöjärjestelmille ja on testattu toimivaksi OS X 10.6 Snow Leopardissa. Komponentin pitäisi toimia myös OS X 10.5 Leopardissa.
+
+Voikon kotisivut löytyvät osoitteesta: http://voikko.sourceforge.net/
+
+Asennus yhdelle käyttäjälle:
+----------------------------
+1: Jos sinulla on ennestään Soikko tai Voikon vanhempi versio, poista ne ja kirjaudu sisään uudelleen.
+2. Kopioi VoikkoSpellService.app kotikansion alle kansioon Kirjasto -> Services.
+(~/Library/Services). Jos Services puuttuu, luo se ensin.
+3. Kirjaudu ulos.
+4. Kirjaudu sisään.
+
+Järjestelmänlaajuinen asennus:
+------------------------------
+Muuten sama kuin yllä, mutta VoikkoSpellService.app kopioidaan kansioon Macintosh HD -> Järjestelmä -> Kirjasto -> Services.
+
+Lisenssi:
+---------
+GPL v3
+Ks. COPYING-tiedosto.
+
+VoikkoSpellService hyödyntää seuraavia kirjastoja: 
+- libvoikko 3.0
+
+Tekijät:
+--------
+VoikkoSpellService: © 2006 – 2010 Harri Pitkänen <hatapitk@iki.fi>

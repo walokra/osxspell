@@ -7,25 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3618AFB611F7552400301285 /* libvoikko.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3618AFB511F7552400301285 /* libvoikko.1.dylib */; };
 		3618B01C11F7577800301285 /* voikko in Resources */ = {isa = PBXBuildFile; fileRef = 3618B01111F7577800301285 /* voikko */; };
+		362A4AAB11FF8381009F2792 /* version.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 362A4AAA11FF8381009F2792 /* version.xcconfig */; };
+		36AD2ED81294723800BF2D01 /* libvoikko.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AD2ED71294723800BF2D01 /* libvoikko.1.dylib */; };
 		DBBBE8770AAD629900A45065 /* VoikkoSpellService.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3618AFB511F7552400301285 /* libvoikko.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvoikko.1.dylib; path = Resources/voikko/libvoikko.1.dylib; sourceTree = "<group>"; };
 		3618B01111F7577800301285 /* voikko */ = {isa = PBXFileReference; lastKnownFileType = folder; name = voikko; path = Resources/voikko; sourceTree = "<group>"; };
+		362A4AAA11FF8381009F2792 /* version.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = version.xcconfig; sourceTree = "<group>"; };
+		36AD2ED71294723800BF2D01 /* libvoikko.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvoikko.1.dylib; path = Resources/voikko/libvoikko.1.dylib; sourceTree = "<group>"; };
 		DBBBE8440AAD59D400A45065 /* VoikkoSpellService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoikkoSpellService.h; sourceTree = "<group>"; };
 		DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoikkoSpellService.m; sourceTree = "<group>"; };
 		DBBBE8540AAD600100A45065 /* VoikkoSpellService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoikkoSpellService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3618AFB411F7550700301285 /* Frameworks */ = {
+		36C38A2512946FDD003A48CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3618AFB611F7552400301285 /* libvoikko.1.dylib in Frameworks */,
+				36AD2ED81294723800BF2D01 /* libvoikko.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,10 +37,11 @@
 		DBBBE8360AAD593300A45065 = {
 			isa = PBXGroup;
 			children = (
+				362A4AAA11FF8381009F2792 /* version.xcconfig */,
 				3618B01111F7577800301285 /* voikko */,
-				3618AFB511F7552400301285 /* libvoikko.1.dylib */,
 				DBBBE8440AAD59D400A45065 /* VoikkoSpellService.h */,
 				DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */,
+				36AD2ED71294723800BF2D01 /* libvoikko.1.dylib */,
 				DBBBE8550AAD600100A45065 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,7 +63,7 @@
 			buildPhases = (
 				DBBBE8500AAD600100A45065 /* Resources */,
 				DBBBE8510AAD600100A45065 /* Sources */,
-				3618AFB411F7550700301285 /* Frameworks */,
+				36C38A2512946FDD003A48CD /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -95,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3618B01C11F7577800301285 /* voikko in Resources */,
+				362A4AAB11FF8381009F2792 /* version.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +118,7 @@
 /* Begin XCBuildConfiguration section */
 		DBBBE83A0AAD593300A45065 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 362A4AAA11FF8381009F2792 /* version.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
@@ -123,7 +128,7 @@
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Resources/voikko\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "";
+				OTHER_CFLAGS = "-DDEBUG";
 				OTHER_LDFLAGS = "";
 				SDKROOT = macosx10.5;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
@@ -133,6 +138,7 @@
 		};
 		DBBBE83B0AAD593300A45065 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 362A4AAA11FF8381009F2792 /* version.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;

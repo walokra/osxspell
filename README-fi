@@ -26,8 +26,11 @@ GPL v3
 Ks. COPYING-tiedosto.
 
 VoikkoSpellService hyödyntää seuraavia kirjastoja: 
-- libvoikko 3.0
+- libvoikko 3.1
 
 Tekijät:
 --------
-VoikkoSpellService: © 2006 – 2010 Harri Pitkänen <hatapitk@iki.fi>
+2010 - 2011 Marko Wallin <marko.wallin@iki.fi>
+* Komponentin jatkokehitys
+2006 – 2010 Harri Pitkänen <hatapitk@iki.fi>
+* Alkuperäisen VoikkoSpellService -komponentin kehittäjä.

@@ -37,4 +37,18 @@
                                                details:(NSArray **)outDetails;
 #endif // MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
 */
+
+/* checkString not available before Mac OS X 10.6. */
+#if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_5
+- (NSArray *)spellServer:(NSSpellServer *)sender checkString:(NSString *)stringToCheck offset:(NSUInteger)offset 
+				   types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options 
+			 orthography:(NSOrthography *)orthography wordCount:(NSInteger *)wordCount;
+#endif // MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_5
+
+/*
+// Not yet implemented
+- (NSArray *)spellServer:(NSSpellServer *)sender suggestCompletionsForPartialWordRange:(NSRange)range 
+				inString:(NSString *)string language:(NSString *)language;
+*/
+ 
 @end

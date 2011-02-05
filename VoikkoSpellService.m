@@ -41,7 +41,7 @@ bool voikkoCheckWord(NSString * word) {
 - (NSRange)spellServer:(NSSpellServer *)sender findMisspelledWordInString: (NSString*)stringToCheck language: (NSString*)language
                                                     wordCount: (int*)wordCount countOnly: (BOOL)countOnly {
 	#ifdef DEBUG
-	NSLog(@"VoikkoSpellService. findMisspelledWordInString (10.4.,5. method) called. stringToCheck: %...@\n",stringToCheck);
+	NSLog(@"findMisspelledWordInString called. stringToCheck: %...@\n",stringToCheck);
 	#endif
 	const char * cstr = [stringToCheck cStringUsingEncoding:NSUTF8StringEncoding];
 	const size_t clen = strlen(cstr);
@@ -54,7 +54,8 @@ bool voikkoCheckWord(NSString * word) {
 		size_t ctokenlen = strlen([token UTF8String]);
 		if (t == TOKEN_NONE) break;
 		if (t == TOKEN_WORD) {
-			if (!voikkoCheckWord(token))
+			// if word is in dictionary (voikkoCheckWord) or word is in user dictionary
+			if (!voikkoCheckWord(token) && !([sender isWordInUserDictionaries:token caseSensitive:YES]))
 				return NSMakeRange(ustart, utokenlen);
 		}
 		ustart += utokenlen;
@@ -66,7 +67,7 @@ bool voikkoCheckWord(NSString * word) {
 - (NSArray *)spellServer:(NSSpellServer *)sender suggestGuessesForWord:(NSString *)word
                                                  inLanguage:(NSString *)language {
 	#ifdef DEBUG
-	NSLog(@"VoikkoSpellService. suggestGuessesForWord called. word: %@ \n",word);
+	NSLog(@"suggestGuessesForWord called. word: %@ \n",word);
 	#endif
 	const char * cstr = [word cStringUsingEncoding:NSUTF8StringEncoding];
 	char ** suggestions = voikkoSuggestCstr(voikkoHandle, cstr);
@@ -88,7 +89,7 @@ bool voikkoCheckWord(NSString * word) {
 - (NSRange)spellServer:(NSSpellServer *)sender checkGrammarInString:(NSString *)string language:(NSString *)language
                                                details:(NSArray **)outDetails {
 	#ifdef DEBUG
-	NSLog(@"VoikkoSpellService. checkGrammarInString called. string: %@ \n",string);
+	NSLog(@"checkGrammarInString called. string: %@ \n",string);
 	#endif
 	const char * cstr = [string cStringUsingEncoding:NSUTF8StringEncoding];
 	if (!cstr) return NSMakeRange(NSNotFound, 0);
@@ -112,13 +113,59 @@ bool voikkoCheckWord(NSString * word) {
 	
 		NSLog(@"[startpos=%@, level=0, ", startPos);
 		NSLog(@"[errorlen=%@, level=0, ", errorLength);
-
+ 
 		skiperrors++;
 	}
 	
 	return NSMakeRange(startPos, errorLength);
 }
 #endif // MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
+*/
+
+/* checkString not available before Mac OS X 10.6. */
+/* Checking just the spelling not grammar */
+#if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_5
+- (NSArray *)spellServer:(NSSpellServer *)sender checkString:(NSString *)stringToCheck offset:(NSUInteger)offset 
+												types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options 
+												orthography:(NSOrthography *)orthography wordCount:(NSInteger *)wordCount {
+	#ifdef DEBUG
+		NSLog(@"checkString called. stringToCheck: %...@\n",stringToCheck);
+	#endif
+	
+	NSMutableArray *result = [NSMutableArray array];
+	
+	const char * cstr = [stringToCheck cStringUsingEncoding:NSUTF8StringEncoding];
+	const size_t clen = strlen(cstr);
+	size_t cstart = 0;
+	size_t ustart = 0;
+	size_t utokenlen;
+	while (1) {
+		enum voikko_token_type t = voikkoNextTokenCstr(voikkoHandle, cstr + cstart, clen - cstart, &utokenlen);
+		NSString * token = [stringToCheck substringWithRange:NSMakeRange(ustart, utokenlen)];
+		size_t ctokenlen = strlen([token UTF8String]);
+		if (t == TOKEN_NONE) break;
+		if (t == TOKEN_WORD) {
+			// if word is in dictionary (voikkoCheckWord) or word is in user dictionary
+			if (!voikkoCheckWord(token) && !([sender isWordInUserDictionaries:token caseSensitive:YES]))
+				[result addObject:[NSTextCheckingResult NSMakeRange(ustart, utokenlen)]];
+		}
+		ustart += utokenlen;
+		cstart += ctokenlen;
+	}
+	return(result);
+	
+ }
+#endif // MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_5
+
+/*
+// Not yet implemented
+- (NSArray *)spellServer:(NSSpellServer *)sender suggestCompletionsForPartialWordRange:(NSRange)range 
+				inString:(NSString *)string language:(NSString *)language {
+	#ifdef DEBUG
+	NSLog(@"VoikkoSpellService. suggestCompletionsForPartialWordRange not yet implemented");
+	#endif
+	return([NSArray array]);
+}
 */
 
 @end

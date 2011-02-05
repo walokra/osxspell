@@ -1,0 +1,10 @@
+# ignore build files
+build/*
+# ignore Finder files
+.DS_Store
+# libvoikko headers
+libvoikko/*
+# Resources
+Resources/voikko/*
+# user's XCode project files
+VoikkoSpellService.xcodeproj/*

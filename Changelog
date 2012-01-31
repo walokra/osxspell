@@ -1,0 +1,3 @@
+2012-01-31 Marko Wallin <marko.wallin@iki.fi>
+* Updating the Xcode-project for 32-bit and 64-bit targets
+* Adding README and other documentation

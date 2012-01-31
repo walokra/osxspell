@@ -1,0 +1,35 @@
+﻿VoikkoSpellService - Spell-checking service for Mac OS X
+========================================================
+
+VoikkoSpellService is an open source spell-checking service for Mac OS X.
+
+VoikkoSpellService utilises the Voikko project's libvoikko and suomi-malaga libraries for spell- and grammar checking. Those are included in the binary package.
+
+Supported Mac OS X versions:
+============================
+- Mac OS X 10.5 (Leopard)
+- Mac OS X 10.6 (Snow Leopard)
+- Mac OS X 10.7 (Lion)
+
+The component includes binary for both 32-bit and 64-bit targets. 
+
+Voikko projects homepage is at: http://voikko.sourceforge.net/
+
+Installation:
+=============
+1. Remove old installation of VoikkoSpellService or Soikko and then log out and in.
+2. Copy the VoikkoSpellService.app to Library/Services which can be found under your user's home directory. If there is no such directory then create it.
+2.1 Alternatively you can enable the spell-checking for every user by copying it under System's Library/Services.
+3. Log out and in.
+
+License:
+========
+GPL v3
+See COPYING
+
+Authors:
+========
+2010 - 2012 Marko Wallin <marko.wallin@iki.fi>
+* Continuing the development
+2006 – 2010 Harri Pitkänen <hatapitk@iki.fi>
+* The original code for the VoikkoSpellService component

@@ -94,6 +94,9 @@
 /* Begin PBXProject section */
 		DBBBE8380AAD593300A45065 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = DBBBE8390AAD593300A45065 /* Build configuration list for PBXProject "VoikkoSpellService" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -185,7 +188,6 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -203,7 +205,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRELINK_LIBS = "$(PRELINK_LIBS)";
 				PRODUCT_NAME = VoikkoSpellService;
 				SDKROOT = macosx10.5;
@@ -219,7 +220,6 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -237,7 +237,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRELINK_LIBS = "$(PRELINK_LIBS)";
 				PRODUCT_NAME = VoikkoSpellService;
 				SDKROOT = macosx10.5;

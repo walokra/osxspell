@@ -1,5 +1,6 @@
 /* VoikkoSpellService: Finnish spelling and grammar checker service for OS X.
- * Copyright (C) 2006 - 2008 Harri Pitkanen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkanen <hatapitk@iki.fi>
+ * Copyright (C) 2010 - 2012 Marko Wallin <marko.wallin@iki.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,12 +32,10 @@
                                                  inLanguage:(NSString *)language;
 
 /* Grammar checking not available before Mac OS X 10.5. */
-/* Current implementation not working
 #if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
 - (NSRange)spellServer:(NSSpellServer *)sender checkGrammarInString:(NSString *)string language:(NSString *)language
                                                details:(NSArray **)outDetails;
 #endif // MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
-*/
 
 /* checkString not available before Mac OS X 10.6. */
 #if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_5

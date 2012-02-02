@@ -1,5 +1,6 @@
 /* VoikkoSpellService: Finnish spelling and grammar checker service for OS X.
- * Copyright (C) 2006 - 2008 Harri Pitkanen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkanen <hatapitk@iki.fi>
+ * Copyright (C) 2010 - 2012 Marko Wallin <marko.wallin@iki.fi>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,7 +42,7 @@ bool voikkoCheckWord(NSString * word) {
 - (NSRange)spellServer:(NSSpellServer *)sender findMisspelledWordInString: (NSString*)stringToCheck language: (NSString*)language
                                                     wordCount: (int*)wordCount countOnly: (BOOL)countOnly {
 	#ifdef DEBUG
-	NSLog(@"findMisspelledWordInString called. stringToCheck: %...@\n",stringToCheck);
+		NSLog(@"findMisspelledWordInString called. stringToCheck: %@ \n",stringToCheck);
 	#endif
 	const char * cstr = [stringToCheck cStringUsingEncoding:NSUTF8StringEncoding];
 	const size_t clen = strlen(cstr);
@@ -67,7 +68,7 @@ bool voikkoCheckWord(NSString * word) {
 - (NSArray *)spellServer:(NSSpellServer *)sender suggestGuessesForWord:(NSString *)word
                                                  inLanguage:(NSString *)language {
 	#ifdef DEBUG
-	NSLog(@"suggestGuessesForWord called. word: %@ \n",word);
+		NSLog(@"suggestGuessesForWord called. word: %@ \n",word);
 	#endif
 	const char * cstr = [word cStringUsingEncoding:NSUTF8StringEncoding];
 	char ** suggestions = voikkoSuggestCstr(voikkoHandle, cstr);
@@ -84,43 +85,54 @@ bool voikkoCheckWord(NSString * word) {
 }
 
 /* Grammar checking not available before Mac OS X 10.5. */
-/* Current implementation not working
 #if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
 - (NSRange)spellServer:(NSSpellServer *)sender checkGrammarInString:(NSString *)string language:(NSString *)language
                                                details:(NSArray **)outDetails {
 	#ifdef DEBUG
-	NSLog(@"checkGrammarInString called. string: %@ \n",string);
+		NSLog(@"checkGrammarInString called. string: %@ \n",string);
 	#endif
 	const char * cstr = [string cStringUsingEncoding:NSUTF8StringEncoding];
-	if (!cstr) return NSMakeRange(NSNotFound, 0);
-
-	const size_t length = strlen(cstr);
+	//if (!cstr) return NSMakeRange(NSNotFound, 0);
+	
+	const size_t clen = strlen(cstr);
 	size_t startPos = 0;
 	size_t errorLength = 0;
 	int skiperrors = 0;
 	int vErrorCount = 0; 
-	while (length < 1000000) { // sanity check 	
-		struct VoikkoGrammarError * vError = voikkoNextGrammarErrorCstr(voikkoHandle, cstr, length, 0, vErrorCount++); 
-		if (!vError) { 
-			break; 
+	while (clen < 1000000) { // sanity check
+		#ifdef DEBUG
+			NSLog(@"while loop\n");
+		#endif
+		struct VoikkoGrammarError * vError = voikkoNextGrammarErrorCstr(voikkoHandle, cstr, clen, 0, vErrorCount++);
+		#ifdef DEBUG
+			NSLog(@"struct VoikkoGrammarError\n");
+		#endif		
+		if (!vError) {
+			#ifdef DEBUG
+				NSLog(@"!vError\n");
+			#endif
+			break;
 		}
 		int errorCode = voikkoGetGrammarErrorCode(vError);
 		startPos = voikkoGetGrammarErrorStartPos(vError);
 		errorLength = voikkoGetGrammarErrorLength(vError);
-		NSLog(@"[code=%@, level=0, ", errorCode);
+		#ifdef DEBUG
+			NSLog(@"[code=%@, level=0, ", errorCode);
+		#endif
 	
 		if (errorCode == 0) return NSMakeRange(NSNotFound, 0);
 	
-		NSLog(@"[startpos=%@, level=0, ", startPos);
-		NSLog(@"[errorlen=%@, level=0, ", errorLength);
- 
+		#ifdef DEBUG
+			NSLog(@"[startpos=%@, level=0, ", startPos);
+			NSLog(@"[errorlen=%@, level=0, ", errorLength);
+		#endif
+		
 		skiperrors++;
 	}
 	
 	return NSMakeRange(startPos, errorLength);
 }
 #endif // MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
-*/
 
 /* checkString not available before Mac OS X 10.6. */
 /* Checking just the spelling not grammar */
@@ -129,7 +141,7 @@ bool voikkoCheckWord(NSString * word) {
 												types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options 
 												orthography:(NSOrthography *)orthography wordCount:(NSInteger *)wordCount {
 	#ifdef DEBUG
-		NSLog(@"checkString called. stringToCheck: %...@\n",stringToCheck);
+		NSLog(@"checkString called. stringToCheck: % @\n",stringToCheck);
 	#endif
 	
 	NSMutableArray *result = [NSMutableArray array];
@@ -173,7 +185,7 @@ bool voikkoCheckWord(NSString * word) {
 int main(int argc, char **argv) {
 		char dictpath[1024], *p;
 		strcpy(dictpath, argv[0]);
-		if(p = strrchr(dictpath, '/')) {
+		if((p = strrchr(dictpath, '/'))) {
 				*p = '\0';
 		}
 	strcat(dictpath, "/../Resources/voikko");

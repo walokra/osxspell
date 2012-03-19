@@ -18,8 +18,7 @@ Voikko projects homepage is at: http://voikko.sourceforge.net/
 Installation:
 =============
 1. Remove old installation of VoikkoSpellService or Soikko and then log out and in.
-2. Copy the VoikkoSpellService.app to Library/Services which can be found under your user's home directory. If there is no such directory then create it.
-2.1 Alternatively you can enable the spell-checking for every user by copying it under System's Library/Services.
+2. Copy the VoikkoSpellService.app to System's /Library/Services. If there is no such directory then create it. You need administrator rights for this.
 3. Log out and in.
 
 License:

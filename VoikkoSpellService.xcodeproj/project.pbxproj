@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3613A9E9151601B000D63D9D /* libvoikko.1.x86_64.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3613A9E7151601B000D63D9D /* libvoikko.1.x86_64.dylib */; };
+		3613A9EA151601B000D63D9D /* libvoikko.1.x86.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3613A9E8151601B000D63D9D /* libvoikko.1.x86.dylib */; };
 		3618B01C11F7577800301285 /* voikko in Resources */ = {isa = PBXBuildFile; fileRef = 3618B01111F7577800301285 /* voikko */; };
-		3619D0B214D86D82008D0148 /* libvoikko.1.x86_64.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3619D0B014D86D82008D0148 /* libvoikko.1.x86_64.dylib */; };
-		3619D0B314D86D82008D0148 /* libvoikko.1.x86.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3619D0B114D86D82008D0148 /* libvoikko.1.x86.dylib */; };
 		362A4AAB11FF8381009F2792 /* version.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 362A4AAA11FF8381009F2792 /* version.xcconfig */; };
 		DBBBE8770AAD629900A45065 /* VoikkoSpellService.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3613A9E7151601B000D63D9D /* libvoikko.1.x86_64.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvoikko.1.x86_64.dylib; path = Resources/voikko/libvoikko.1.x86_64.dylib; sourceTree = "<group>"; };
+		3613A9E8151601B000D63D9D /* libvoikko.1.x86.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvoikko.1.x86.dylib; path = Resources/voikko/libvoikko.1.x86.dylib; sourceTree = "<group>"; };
 		3618B01111F7577800301285 /* voikko */ = {isa = PBXFileReference; lastKnownFileType = folder; name = voikko; path = Resources/voikko; sourceTree = "<group>"; };
-		3619D0B014D86D82008D0148 /* libvoikko.1.x86_64.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvoikko.1.x86_64.dylib; path = Resources/voikko/libvoikko.1.x86_64.dylib; sourceTree = "<group>"; };
-		3619D0B114D86D82008D0148 /* libvoikko.1.x86.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvoikko.1.x86.dylib; path = Resources/voikko/libvoikko.1.x86.dylib; sourceTree = "<group>"; };
 		362A4AAA11FF8381009F2792 /* version.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = version.xcconfig; sourceTree = "<group>"; };
 		36F8573614D86BA800A4157D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		DBBBE8440AAD59D400A45065 /* VoikkoSpellService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoikkoSpellService.h; sourceTree = "<group>"; };
@@ -30,8 +30,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3619D0B214D86D82008D0148 /* libvoikko.1.x86_64.dylib in Frameworks */,
-				3619D0B314D86D82008D0148 /* libvoikko.1.x86.dylib in Frameworks */,
+				3613A9E9151601B000D63D9D /* libvoikko.1.x86_64.dylib in Frameworks */,
+				3613A9EA151601B000D63D9D /* libvoikko.1.x86.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,8 +49,8 @@
 		DBBBE8360AAD593300A45065 = {
 			isa = PBXGroup;
 			children = (
-				3619D0B014D86D82008D0148 /* libvoikko.1.x86_64.dylib */,
-				3619D0B114D86D82008D0148 /* libvoikko.1.x86.dylib */,
+				3613A9E7151601B000D63D9D /* libvoikko.1.x86_64.dylib */,
+				3613A9E8151601B000D63D9D /* libvoikko.1.x86.dylib */,
 				362A4AAA11FF8381009F2792 /* version.xcconfig */,
 				3618B01111F7577800301285 /* voikko */,
 				DBBBE8440AAD59D400A45065 /* VoikkoSpellService.h */,
@@ -151,7 +151,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Services";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Resources/voikko\"/**";
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DDEBUG";
@@ -171,7 +171,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Services";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Resources/voikko\"/**";
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
@@ -196,7 +196,10 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Services";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Resources/voikko\"";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Resources/voikko\"",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_FLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = (
@@ -228,7 +231,10 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Services";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Resources/voikko\"";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Resources/voikko\"",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_FLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = (

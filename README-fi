@@ -17,9 +17,7 @@ Voikon kotisivut löytyvät osoitteesta: http://voikko.sourceforge.net/
 Asennus:
 ========
 1: Jos sinulla on ennestään Soikko tai Voikon vanhempi versio, poista ne ja kirjaudu sisään uudelleen.
-2. Kopioi VoikkoSpellService.app kotikansion alle kansioon Kirjasto -> Services.
-(~/Library/Services). Jos Services puuttuu, luo se ensin.
-2.1 Jos haluat asentaa oikoluvun järjestelmänlaajuisesti, kopioi se kansioon Macintosh HD -> Järjestelmä -> Kirjasto -> Services (/Library/Services).
+2. Kopioi VoikkoSpellService.app se kansioon Macintosh HD -> Järjestelmä -> Kirjasto -> Services (/Library/Services). Jos Services puuttuu, luo se ensin. Tarvitset pääkäyttäjän oikeudet tähän.
 3. Kirjaudu ulos.
 4. Kirjaudu sisään.
 

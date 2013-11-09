@@ -24,7 +24,7 @@
 
 struct VoikkoHandle * voikkoHandle = 0;
 
-- (id)init
+- (id<NSSpellServerDelegate>)init
 {
 	self = [super init];
 }
@@ -84,8 +84,6 @@ bool voikkoCheckWord(NSString * word) {
 	return arr;
 }
 
-/* Grammar checking not available before Mac OS X 10.5. */
-#if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
 - (NSRange)spellServer:(NSSpellServer *)sender checkGrammarInString:(NSString *)string language:(NSString *)language
                                                details:(NSArray **)outDetails {
 	#ifdef DEBUG
@@ -117,14 +115,14 @@ bool voikkoCheckWord(NSString * word) {
 		startPos = voikkoGetGrammarErrorStartPos(vError);
 		errorLength = voikkoGetGrammarErrorLength(vError);
 		#ifdef DEBUG
-			NSLog(@"[code=%@, level=0, ", errorCode);
+			NSLog(@"[code=%d, level=0, ", errorCode);
 		#endif
 	
 		if (errorCode == 0) return NSMakeRange(NSNotFound, 0);
 	
 		#ifdef DEBUG
-			NSLog(@"[startpos=%@, level=0, ", startPos);
-			NSLog(@"[errorlen=%@, level=0, ", errorLength);
+			NSLog(@"[startpos=%zu, level=0, ", startPos);
+			NSLog(@"[errorlen=%zu, level=0, ", errorLength);
 		#endif
 		
 		skiperrors++;
@@ -132,16 +130,12 @@ bool voikkoCheckWord(NSString * word) {
 	
 	return NSMakeRange(startPos, errorLength);
 }
-#endif // MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
 
-/* checkString not available before Mac OS X 10.6. */
-/* Checking just the spelling not grammar */
-#if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_5
-- (NSArray *)spellServer:(NSSpellServer *)sender checkString:(NSString *)stringToCheck offset:(NSUInteger)offset 
+- (NSArray *)spellServer:(NSSpellServer *)sender checkString:(NSString *)stringToCheck offset:(NSUInteger)offset
 												types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options 
 												orthography:(NSOrthography *)orthography wordCount:(NSInteger *)wordCount {
 	#ifdef DEBUG
-		NSLog(@"checkString called. stringToCheck: % @\n",stringToCheck);
+		NSLog(@"checkString called. stringToCheck: %@\n",stringToCheck);
 	#endif
 	
 	NSMutableArray *result = [NSMutableArray array];
@@ -159,7 +153,7 @@ bool voikkoCheckWord(NSString * word) {
 		if (t == TOKEN_WORD) {
 			// if word is in dictionary (voikkoCheckWord) or word is in user dictionary
 			if (!voikkoCheckWord(token) && !([sender isWordInUserDictionaries:token caseSensitive:YES]))
-				[result addObject:[NSTextCheckingResult NSMakeRange(ustart, utokenlen)]];
+				[result addObject:[NSTextCheckingResult spellCheckingResultWithRange:NSMakeRange(ustart, utokenlen)]];
 		}
 		ustart += utokenlen;
 		cstart += ctokenlen;
@@ -167,7 +161,6 @@ bool voikkoCheckWord(NSString * word) {
 	return(result);
 	
  }
-#endif // MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_5
 
 /*
 // Not yet implemented

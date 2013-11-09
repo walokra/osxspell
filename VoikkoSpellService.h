@@ -19,9 +19,9 @@
 #import <Cocoa/Cocoa.h>
 #import <Foundation/NSSpellServer.h>
 
-@interface VoikkoSpellService : NSObject { }
+@interface VoikkoSpellService : NSObject<NSSpellServerDelegate> { }
 
-- (id)init;
+- (id<NSSpellServerDelegate>)init;
 
 - (void) dealloc;
 
@@ -31,18 +31,12 @@
 - (NSArray *)spellServer:(NSSpellServer *)sender suggestGuessesForWord:(NSString *)word
                                                  inLanguage:(NSString *)language;
 
-/* Grammar checking not available before Mac OS X 10.5. */
-#if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
 - (NSRange)spellServer:(NSSpellServer *)sender checkGrammarInString:(NSString *)string language:(NSString *)language
                                                details:(NSArray **)outDetails;
-#endif // MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
 
-/* checkString not available before Mac OS X 10.6. */
-#if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_5
-- (NSArray *)spellServer:(NSSpellServer *)sender checkString:(NSString *)stringToCheck offset:(NSUInteger)offset 
+- (NSArray *)spellServer:(NSSpellServer *)sender checkString:(NSString *)stringToCheck offset:(NSUInteger)offset
 				   types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options 
 			 orthography:(NSOrthography *)orthography wordCount:(NSInteger *)wordCount;
-#endif // MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_5
 
 /*
 // Not yet implemented

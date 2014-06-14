@@ -7,11 +7,11 @@ VoikkoSpellService utilises the Voikko project's libvoikko and suomi-malaga libr
 
 Supported Mac OS X versions:
 ============================
-- Mac OS X 10.5 (Leopard)
-- Mac OS X 10.6 (Snow Leopard)
-- Mac OS X 10.7 (Lion)
+- Mac OS X 10.8 (Mountain Lion)
+- Mac OS X 10.9 (Mavericks)
+- or newer
 
-The component includes binary for both 32-bit and 64-bit targets. 
+The component includes binary for 64-bit targets. 
 
 Voikko projects homepage is at: http://voikko.sourceforge.net/
 
@@ -20,6 +20,8 @@ Installation:
 1. Remove old installation of VoikkoSpellService or Soikko and then log out and in.
 2. Copy the VoikkoSpellService.app to System's /Library/Services. If there is no such directory then create it. You need administrator rights for this.
 3. Log out and in.
+4. After login go to Services folder and start VoikkoSpellService with Ctrl clicking and selecting Open. This is done because the component isn't from App Store and can't work with Sandboxing.
+5. Voikko Spellchecking should be now available.
 
 License:
 ========
@@ -28,7 +30,7 @@ See COPYING
 
 Authors:
 ========
-2010 - 2012 Marko Wallin <marko.wallin@iki.fi>
+2010 - 2014 Marko Wallin <marko.wallin@iki.fi>
 * Continuing the development
 2006 – 2010 Harri Pitkänen <hatapitk@iki.fi>
 * The original code for the VoikkoSpellService component

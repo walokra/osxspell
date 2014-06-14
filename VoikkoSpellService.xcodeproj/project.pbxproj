@@ -198,7 +198,7 @@
 					/Users/mtw/dev/voikko/osxspell/osxspell.git/Resources/voikko,
 				);
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_FLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -208,7 +208,7 @@
 				);
 				PRELINK_LIBS = "$(PRELINK_LIBS)";
 				PRODUCT_NAME = VoikkoSpellService;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx10.8;
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -235,7 +235,7 @@
 					/Users/mtw/dev/voikko/osxspell/osxspell.git/Resources/voikko,
 				);
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_FLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -245,7 +245,7 @@
 				);
 				PRELINK_LIBS = "$(PRELINK_LIBS)";
 				PRODUCT_NAME = VoikkoSpellService;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx10.8;
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;

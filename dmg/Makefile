@@ -51,6 +51,7 @@ $(TEMPLATE_DMG).bz2:
 	@echo
 
 $(WC_DMG): $(TEMPLATE_DMG)
+	cp DS_Store src/.DS_Store
 	cp ../README* src/
 	cp ../COPYING src/
 	cp ../Changelog src/

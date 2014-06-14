@@ -1,0 +1,11 @@
+2014-06-14 (1.0.3b2) Marko Wallin <marko.wallin@iki.fi>
+* Updated libraries to Voikko 1.7 and suomi-malaga 1.16
+
+2012-03-18 (1.0.3b1) Marko Wallin <marko.wallin@iki.fi>
+* Updated link to Services folder to /Library/Services due OS X 10.7 App sandboxing.
+* Updated suomi-malaga to 1.11
+* Fixed library linking issue
+
+2012-01-31 (1.0.3a2) Marko Wallin <marko.wallin@iki.fi>
+* Updating the Xcode-project for 32-bit and 64-bit targets
+* Adding README and other documentation

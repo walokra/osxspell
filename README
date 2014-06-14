@@ -23,6 +23,15 @@ Installation:
 4. After login go to Services folder and start VoikkoSpellService with Ctrl clicking and selecting Open. This is done because the component isn't from App Store and can't work with Sandboxing.
 5. Voikko Spellchecking should be now available.
 
+Building:
+===========================================================================
+1. open VoikkoSpellService.xcodeproj in Xcode. 
+2. Copy voikko and suomi-malaga libraries to osxspell/Resources/voikko
+3. Fix necessary paths to libvoikko and build
+4. Install by copying build results, VoikkoSpellService.app, under ~/Library/Services
+
+# Done;
+
 License:
 ========
 GPL v3

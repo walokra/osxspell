@@ -148,11 +148,11 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/Services;
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DDEBUG";
 				OTHER_LDFLAGS = "";
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx10.8;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 				VALID_ARCHS = x86_64;
 			};
@@ -168,10 +168,10 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/Services;
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx10.8;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 				VALID_ARCHS = x86_64;
 			};

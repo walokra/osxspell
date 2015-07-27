@@ -91,7 +91,7 @@
 		DBBBE8380AAD593300A45065 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0640;
 			};
 			buildConfigurationList = DBBBE8390AAD593300A45065 /* Build configuration list for PBXProject "VoikkoSpellService" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -148,11 +148,11 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/Services;
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DDEBUG";
 				OTHER_LDFLAGS = "";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.9;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 				VALID_ARCHS = x86_64;
 			};
@@ -168,10 +168,10 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/Services;
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.9;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 				VALID_ARCHS = x86_64;
 			};
@@ -198,7 +198,7 @@
 					/Users/mtw/dev/voikko/osxspell/osxspell.git/Resources/voikko,
 				);
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_FLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -208,7 +208,7 @@
 				);
 				PRELINK_LIBS = "$(PRELINK_LIBS)";
 				PRODUCT_NAME = VoikkoSpellService;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.9;
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -235,7 +235,7 @@
 					/Users/mtw/dev/voikko/osxspell/osxspell.git/Resources/voikko,
 				);
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_FLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -245,7 +245,7 @@
 				);
 				PRELINK_LIBS = "$(PRELINK_LIBS)";
 				PRODUCT_NAME = VoikkoSpellService;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.9;
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;

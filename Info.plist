@@ -20,6 +20,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>${PROJECT_VERSION}</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
 	<key>LSBackgroundOnly</key>
 	<string>1</string>
 	<key>NSPrincipalClass</key>
@@ -31,7 +33,7 @@
 			<string>VoikkoSpellService</string>
 			<key>NSLanguages</key>
 			<array>
-				<string>Finnish</string>				
+				<string>Finnish</string>
 			</array>
 			<key>NSPortName</key>
 			<string>VoikkoSpellService</string>

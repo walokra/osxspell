@@ -19,7 +19,7 @@
 ################################################################################
 
 NAME ?= VoikkoSpellService
-VERSION ?= 1.0.4a1
+VERSION ?= 1.0.5b1
 
 SOURCE_DIR ?= src
 SOURCE_FILES ?= VoikkoSpellService.app README-fi README Changelog COPYING Services .background .DS_Store

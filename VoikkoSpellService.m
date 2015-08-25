@@ -131,6 +131,7 @@ bool voikkoCheckWord(NSString * word) {
 	return NSMakeRange(startPos, errorLength);
 }
 
+/* Doesn't work as intended, underlines partial words as incorrect.
 - (NSArray *)spellServer:(NSSpellServer *)sender checkString:(NSString *)stringToCheck offset:(NSUInteger)offset
 												types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options 
 												orthography:(NSOrthography *)orthography wordCount:(NSInteger *)wordCount {
@@ -161,6 +162,7 @@ bool voikkoCheckWord(NSString * word) {
 	return(result);
 	
  }
+*/
 
 /*
 // Not yet implemented

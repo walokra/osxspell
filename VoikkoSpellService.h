@@ -34,10 +34,11 @@
 - (NSRange)spellServer:(NSSpellServer *)sender checkGrammarInString:(NSString *)string language:(NSString *)language
                                                details:(NSArray **)outDetails;
 
+/* Doesn't work as intended, underlines partial words as incorrect.
 - (NSArray *)spellServer:(NSSpellServer *)sender checkString:(NSString *)stringToCheck offset:(NSUInteger)offset
 				   types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options 
 			 orthography:(NSOrthography *)orthography wordCount:(NSInteger *)wordCount;
-
+*/
 /*
 // Not yet implemented
 - (NSArray *)spellServer:(NSSpellServer *)sender suggestCompletionsForPartialWordRange:(NSRange)range 

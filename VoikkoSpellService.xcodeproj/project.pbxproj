@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3618B01C11F7577800301285 /* voikko in Resources */ = {isa = PBXBuildFile; fileRef = 3618B01111F7577800301285 /* voikko */; };
-		362A4AAB11FF8381009F2792 /* version.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 362A4AAA11FF8381009F2792 /* version.xcconfig */; };
 		36FAD758182ED0EB00766C62 /* libvoikko.1.x86_64.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FAD756182ED0EB00766C62 /* libvoikko.1.x86_64.dylib */; };
 		DBBBE8770AAD629900A45065 /* VoikkoSpellService.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */; };
 /* End PBXBuildFile section */
@@ -91,18 +90,18 @@
 		DBBBE8380AAD593300A45065 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = DBBBE8390AAD593300A45065 /* Build configuration list for PBXProject "VoikkoSpellService" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
 				en,
+				fr,
+				de,
+				Base,
+				ja,
 			);
 			mainGroup = DBBBE8360AAD593300A45065;
 			productRefGroup = DBBBE8550AAD600100A45065 /* Products */;
@@ -120,7 +119,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3618B01C11F7577800301285 /* voikko in Resources */,
-				362A4AAB11FF8381009F2792 /* version.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,16 +141,44 @@
 			baseConfigurationReference = 362A4AAA11FF8381009F2792 /* version.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/Services;
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				ONLY_ACTIVE_ARCH = NO;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
 				OTHER_LDFLAGS = "";
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 				VALID_ARCHS = x86_64;
 			};
@@ -163,15 +189,42 @@
 			baseConfigurationReference = 362A4AAA11FF8381009F2792 /* version.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/Services;
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 				VALID_ARCHS = x86_64;
 			};
@@ -182,6 +235,8 @@
 			baseConfigurationReference = 362A4AAA11FF8381009F2792 /* version.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -198,7 +253,7 @@
 					/Users/mtw/dev/voikko/osxspell/osxspell.git/Resources/voikko,
 				);
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_FLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -207,8 +262,9 @@
 					AppKit,
 				);
 				PRELINK_LIBS = "$(PRELINK_LIBS)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.puimula.VoikkoSpellService;
 				PRODUCT_NAME = VoikkoSpellService;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -220,6 +276,8 @@
 			baseConfigurationReference = 362A4AAA11FF8381009F2792 /* version.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
@@ -235,7 +293,7 @@
 					/Users/mtw/dev/voikko/osxspell/osxspell.git/Resources/voikko,
 				);
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_FLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -244,8 +302,9 @@
 					AppKit,
 				);
 				PRELINK_LIBS = "$(PRELINK_LIBS)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.puimula.VoikkoSpellService;
 				PRODUCT_NAME = VoikkoSpellService;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;

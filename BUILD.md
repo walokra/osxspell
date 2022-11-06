@@ -73,8 +73,10 @@ To see the search path for your dynamic lib use e.g.: `$ otool -L ~/.voikko/lib/
 ## Build osxspell
 
 ```
-$ cd ~/osxspell
 $ export OSXSPELLDIR=~/osxspell
+$ cd <PATH TO libvoikko>/src
+$ cp voikko.h voikko_structs.h voikko_enums.h voikko_deprecated.h voikko_defines.h $OSXSPELLDIR/libvoikko
+$ cd $OSXSPELLDIR
 $ export PREFIX=~/.voikko
 $ export BITS=arm64
 $ cp -vr $PREFIX/lib/voikko/* $OSXSPELLDIR/Resources/voikko

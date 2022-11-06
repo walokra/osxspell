@@ -1,16 +1,16 @@
-VoikkoSpellService - oikoluku -järjestelmäkomponentti OS X:lle
+VoikkoSpellService - oikoluku -järjestelmäkomponentti macOS:lle
 ==============================================================
 VoikkoSpellService on ohjelmisto oikeinkirjoituksen ja kieliopin tarkistamiseen sekä tavutukseen. Tällä hetkellä tuettuja kieliä ovat: suomi.
 
-VoikkoSpellService käyttää oikolukuun Voikko-projektin libvoikko ja suomi-malaga -kirjastoja. Kyseiset kirjastot ovat paketin mukana.
+VoikkoSpellService käyttää oikolukuun Voikko-projektin libvoikko ja voikko-fi -kirjastoja. Kyseiset kirjastot ovat paketin mukana.
 
-Tuetut Mac OS X versiot:
+Tuetut macOS versiot:
 ========================
 - Mac OS X 10.8 (Mountain Lion)
 - Mac OS X 10.9 (Mavericks)
 - tai uudempi
 
-Komponentti sisältää 64-bit binäärin. 
+Komponentti sisältää 64-bit binäärin.
 
 Voikon kotisivut löytyvät osoitteesta: http://voikko.sourceforge.net/
 
@@ -30,7 +30,7 @@ Ks. COPYING-tiedosto.
 
 Tekijät:
 ========
-2010 - 2014 Marko Wallin <marko.wallin@iki.fi>
+2010 - 2022 Marko Wallin <marko.wallin@iki.fi>
 * Komponentin jatkokehitys
 2006 – 2010 Harri Pitkänen <hatapitk@iki.fi>
 * Alkuperäisen VoikkoSpellService -komponentin kehittäjä.

@@ -1,4 +1,4 @@
-# Compiling libvoikko on macOS M1
+# Compiling libvoikko on macOS
 
 Tested on macOS Monterey 12.6
 
@@ -27,7 +27,7 @@ Download libraries:
 
 - voikko-fi 2.5 https://github.com/voikko/corevoikko/archive/refs/tags/rel-voikko-fi-2.5.tar.gz
 
-Environment: Xcode 14.1
+Environment: Xcode 14.1 on M1
 
 ```
 $ gcc -v
@@ -36,21 +36,16 @@ Target: arm64-apple-darwin21.6.0
 Thread model: posix
 ```
 
-1. Set the environment: pkg-config, foma, hfstospell
-1. Build and install voikko-fi
-1. Build and install libvoikko
-
-### Build voikko-fi and libvoikko for osxspell
-
-**voikko-fi**
+Environment: Xcode 14.1 on Intel x86_64
 
 ```
-$ export PREFIX=~/.voikko
-$ cd <PATH TO voikko-fi>
-$ make clean
-$ make vvfst
-$ make vvfst-install DESTDIR=$PREFIX/lib/voikko
+$ gcc -v
+Apple clang version 14.0.0 (clang-1400.0.29.202)
+Target: x86_64-apple-darwin21.6.0
+Thread model: posix
 ```
+
+### Build voikko-fi and libvoikko
 
 **libvoikko**
 
@@ -64,11 +59,21 @@ $ cd <PATH TO libvoikko>
 $ export PREFIX=~/.voikko
 $ export BITS=arm64
 $ make distclean
-$ ./configure --disable-hfst --disable-silent-rules --disable-external-dicts --prefix=$PREFIX LDFLAGS=" -Wl,-install_name,@executable_path/../Resources/voikko/libvoikko.1.$BITS.dylib" --enable-static --disable-shared --with-dictionary-path=/Library/Spelling/voikko:/usr/lib/voikko
+$ ./configure --disable-hfst --disable-silent-rules --enable-static --disable-shared --disable-dependency-tracking --with-dictionary-path=$PREFIX/lib/voikko --prefix=$PREFIX LDFLAGS=" -Wl,-install_name,@executable_path/../Resources/voikko/libvoikko.1.$BITS.dylib"
 $ make install CFLAGS="-I$PREFIX/include -L$PREFIX/lib" LINK="gcc -framework CoreFoundation -framework Cocoa" LDFLAGS="-framework CoreFoundation -framework Cocoa -Wl,-install_name,@executable_path/../Resources/voikko/libvoikko.1.$BITS.dylib"
 ```
 
 To see the search path for your dynamic lib use e.g.: `$ otool -L ~/.voikko/lib/libvoikko.1.dylib`
+
+**voikko-fi**
+
+```
+$ export PREFIX=~/.voikko
+$ cd <PATH TO voikko-fi>
+$ make clean
+$ make vvfst
+$ make vvfst-install DESTDIR=$PREFIX/lib/voikko
+```
 
 ## Build osxspell
 

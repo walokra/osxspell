@@ -24,7 +24,7 @@ Avaa Terminal (pääte) ja kirjoita alla olevat komennot:
 ## Asennus paketista
 
 1: Jos sinulla on ennestään Soikko tai Voikon vanhempi versio, poista ne ja kirjaudu sisään uudelleen.
-1. Kopioi VoikkoSpellService.app se kansioon Macintosh HD -> Järjestelmä -> Kirjasto -> Services (/Library/Services). Jos kyseinen hakemisto puuttuu, luo se ensin. Tarvitset pääkäyttäjän oikeudet tähän.
+1. Kopioi VoikkoSpellService.app käyttäjän Library -> Services hakemistoon (~/Library/Services). Jos kyseinen hakemisto puuttuu, luo se ensin.
 2. Kirjaudu ulos.
 3. Kirjaudu sisään.
 4. Sisäänkirjautumisen jälkeen siirry Services-kansioon Finderin avulla ja käynnistä VoikkoSpellService Ctrl-klikkaamalla ja valitsemalla Avaa. Tällä kierretään Gatekeeperin suojamekanismi App Storen ulkopuolelta ladatuille sovelluksille, jotka eivät toimi Sandboxissa.

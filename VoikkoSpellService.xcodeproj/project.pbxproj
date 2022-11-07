@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3618B01C11F7577800301285 /* voikko in Resources */ = {isa = PBXBuildFile; fileRef = 3618B01111F7577800301285 /* voikko */; };
 		36FAD758182ED0EB00766C62 /* libvoikko.1.arm64.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FAD756182ED0EB00766C62 /* libvoikko.1.arm64.dylib */; };
+		DAEE19DA291977C5007C9551 /* libvoikko.1.x86_64.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DAEE19D9291977C5007C9551 /* libvoikko.1.x86_64.dylib */; };
 		DBBBE8770AAD629900A45065 /* VoikkoSpellService.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */; };
 /* End PBXBuildFile section */
 
@@ -17,6 +18,7 @@
 		362A4AAA11FF8381009F2792 /* version.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = version.xcconfig; sourceTree = "<group>"; };
 		36F8573614D86BA800A4157D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		36FAD756182ED0EB00766C62 /* libvoikko.1.arm64.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvoikko.1.arm64.dylib; path = Resources/voikko/libvoikko.1.arm64.dylib; sourceTree = "<group>"; };
+		DAEE19D9291977C5007C9551 /* libvoikko.1.x86_64.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvoikko.1.x86_64.dylib; path = Resources/voikko/libvoikko.1.x86_64.dylib; sourceTree = "<group>"; };
 		DBBBE8440AAD59D400A45065 /* VoikkoSpellService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoikkoSpellService.h; sourceTree = "<group>"; };
 		DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoikkoSpellService.m; sourceTree = "<group>"; };
 		DBBBE8540AAD600100A45065 /* VoikkoSpellService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoikkoSpellService.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAEE19DA291977C5007C9551 /* libvoikko.1.x86_64.dylib in Frameworks */,
 				36FAD758182ED0EB00766C62 /* libvoikko.1.arm64.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,6 +40,7 @@
 		36F8573514D86BA800A4157D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DAEE19D9291977C5007C9551 /* libvoikko.1.x86_64.dylib */,
 				36FAD756182ED0EB00766C62 /* libvoikko.1.arm64.dylib */,
 				36F8573614D86BA800A4157D /* CoreFoundation.framework */,
 			);
@@ -177,13 +181,14 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/Services;
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
 				OTHER_LDFLAGS = "";
+				PROJECT_VERSION = 01010.02.01;
 				SDKROOT = macosx;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
-				VALID_ARCHS = arm64;
+				VALID_ARCHS = "arm64 x86_64";
 			};
 			name = Debug;
 		};
@@ -226,12 +231,13 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/Services;
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
+				PROJECT_VERSION = 01010.02.01;
 				SDKROOT = macosx;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
-				VALID_ARCHS = arm64;
+				VALID_ARCHS = "arm64 x86_64";
 			};
 			name = Release;
 		};
@@ -240,6 +246,7 @@
 			baseConfigurationReference = 362A4AAA11FF8381009F2792 /* version.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
@@ -254,14 +261,17 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)";
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VoikkoSpellService;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INSTALL_PATH = /Library/Services;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Resources/voikko",
+					"$(PROJECT_DIR)/Resources/voikko",
 				);
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1.0b1;
 				OTHER_FLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -273,8 +283,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.puimula.VoikkoSpellService;
 				PRODUCT_NAME = VoikkoSpellService;
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "VoikkoSpellService Developer ID app";
-				SDKROOT = macosx;
-				VALID_ARCHS = arm64;
+				SDKROOT = macosx13.0;
+				VALID_ARCHS = "arm64 x86_64";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -285,6 +295,7 @@
 			baseConfigurationReference = 362A4AAA11FF8381009F2792 /* version.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
@@ -298,14 +309,17 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)";
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VoikkoSpellService;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INSTALL_PATH = /Library/Services;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Resources/voikko",
+					"$(PROJECT_DIR)/Resources/voikko",
 				);
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1.0b1;
 				OTHER_FLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -317,8 +331,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.puimula.VoikkoSpellService;
 				PRODUCT_NAME = VoikkoSpellService;
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "VoikkoSpellService Developer ID app";
-				SDKROOT = macosx;
-				VALID_ARCHS = arm64;
+				SDKROOT = macosx13.0;
+				VALID_ARCHS = "arm64 x86_64";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};

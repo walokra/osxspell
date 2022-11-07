@@ -8,6 +8,8 @@ VoikkoSpellService
 # Finder files
 .DS_Store
 
+libs
+
 # libvoikko headers
 libvoikko
 

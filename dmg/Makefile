@@ -1,15 +1,15 @@
 #
 # Build file for creating DMG files.
 #
-# The DMG packager looks for a template.dmg.bz2 for using as its 
+# The DMG packager looks for a template.dmg.bz2 for using as its
 # DMG template. If it doesn't find one, it generates a clean one.
 #
 # If you create a DMG template, you should make one containing all
 # the files listed in $(SOURCE_FILES) below, and arrange everything to suit
 # your style. The contents of the files themselves does not matter, so
-# they can be empty (they will be overwritten later). 
+# they can be empty (they will be overwritten later).
 #
-# Remko Tronçon 
+# Remko Tronçon
 # http://el-tramo.be/about
 # Licensed under the MIT License. See COPYING for details.
 
@@ -19,10 +19,10 @@
 ################################################################################
 
 NAME ?= VoikkoSpellService
-VERSION ?= 1.0.5b1
+VERSION ?= 1.1.0b1
 
 SOURCE_DIR ?= src
-SOURCE_FILES ?= VoikkoSpellService.app README-fi README Changelog COPYING Services .background .DS_Store
+SOURCE_FILES ?= VoikkoSpellService.app README-fi.md README.md CHANGELOG.md COPYING Services .background .DS_Store
 
 TEMPLATE_DMG ?= template.dmg
 
@@ -41,7 +41,7 @@ all: $(MASTER_DMG)
 $(TEMPLATE_DMG): $(TEMPLATE_DMG).bz2
 	bunzip2 -k $<
 
-$(TEMPLATE_DMG).bz2: 
+$(TEMPLATE_DMG).bz2:
 	@echo
 	@echo --------------------- Generating empty template --------------------
 	mkdir template
@@ -54,7 +54,7 @@ $(WC_DMG): $(TEMPLATE_DMG)
 	cp DS_Store src/.DS_Store
 	cp ../README* src/
 	cp ../COPYING src/
-	cp ../Changelog src/
+	cp ../CHANGELOG src/
 	cp -r $< $@
 
 $(MASTER_DMG): $(WC_DMG) $(addprefix $(SOURCE_DIR)/,$(SOURCE_FILES))

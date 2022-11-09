@@ -20,4 +20,6 @@ Resources/voikko/*
 VoikkoSpellService.xcodeproj/*
 
 # target
-dmg/*
+dmg/src
+dmg/icon.png
+dmg/*.dmg

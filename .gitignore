@@ -1,18 +1,25 @@
-# ignore build files
-build/*
-DerivedData/*
-# ignore Finder files
-libvoikko/.DS_Store
-Resources/.DS_Store
+# build files
+build
+DerivedData
+
+# build result
+VoikkoSpellService
+
+# Finder files
+.DS_Store
+
+libs
+
 # libvoikko headers
-libvoikko/*
+libvoikko
+
 # Resources
 Resources/voikko/*
+
 # user's XCode project files
 VoikkoSpellService.xcodeproj/*
-# target
-dmg/src/VoikkoSpellService.app
-dmg/src/README*
-dmg/src/COPYING
-dmg/src/Changelog
 
+# target
+dmg/src
+dmg/icon.png
+dmg/*.dmg

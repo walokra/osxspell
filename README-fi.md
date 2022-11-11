@@ -18,7 +18,7 @@ Voikon kotisivut löytyvät osoitteesta: http://voikko.puimula.org/
 Avaa Terminal (pääte) ja kirjoita alla olevat komennot:
 
 1. Asenna (Homebrew)[https://brew.sh/]: `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"”`
-1. Asenna voikkospellservice: `$ brew install voikkospellservice`
+1. Asenna voikkospellservice: `$ brew install --cask voikkospellservice`
 1. Oikoluvun pitäisi olla nyt käytettävissä.
 
 ## Asennus paketista

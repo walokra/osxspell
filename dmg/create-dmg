@@ -100,8 +100,6 @@ Options:
       hide the extension of file
   --app-drop-link <x> <y>
       make a drop link to Applications, at location x,y
-  --services-drop-link <x> <y>
-      make a drop link to user Services install dir, at location x,y
   --format <format>
       specify the final disk image format (UDZO|UDBZ|ULFO|ULMO) (default is UDZO)
   --add-file <target_name> <file>|<folder> <x> <y>
@@ -171,11 +169,6 @@ while [[ "${1:0:1}" = "-" ]]; do
 			version; exit 0;;
 		--pure-version)
 			pure_version; exit 0;;
-		--services-drop-link)
-			SERVICES_LINK=$2
-			SERVICES_CLAUSE="set position of item \"Services\" to {$2, $3}
-			"
-			shift; shift; shift;;
 		--app-drop-link)
 			APPLICATION_LINK=$2
 			APPLICATION_CLAUSE="set position of item \"Applications\" to {$2, $3}
@@ -374,12 +367,6 @@ if [[ -n "$APPLICATION_LINK" ]]; then
 	ln -s /Applications "$MOUNT_DIR/Applications"
 fi
 
-if [[ -n "$SERVICES_LINK" ]]; then
-	echo "Making link to Services install dir..."
-	echo $MOUNT_DIR
-	ln -sv "$HOME/Library/Services/" "$MOUNT_DIR/Services"
-fi
-
 if [[ -n "$VOLUME_ICON_FILE" ]]; then
 	echo "Copying volume icon file '$VOLUME_ICON_FILE'..."
 	cp "$VOLUME_ICON_FILE" "$MOUNT_DIR/.VolumeIcon.icns"
@@ -406,7 +393,6 @@ else
 					-e "s/REPOSITION_HIDDEN_FILES_CLAUSE/$REPOSITION_HIDDEN_FILES_CLAUSE/g" \
 					-e "s/ICON_SIZE/$ICON_SIZE/g" -e "s/TEXT_SIZE/$TEXT_SIZE/g" \
 			| perl -pe "s/POSITION_CLAUSE/$POSITION_CLAUSE/g" \
-			| perl -pe "s/SERVICES_CLAUSE/$SERVICES_CLAUSE/g" \
 			| perl -pe "s/APPLICATION_CLAUSE/$APPLICATION_CLAUSE/g" \
 			| perl -pe "s/HIDING_CLAUSE/$HIDING_CLAUSE/" \
 			> "$APPLESCRIPT_FILE"

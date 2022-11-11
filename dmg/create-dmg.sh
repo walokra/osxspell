@@ -1,7 +1,7 @@
 #! /bin/bash
 
-#cp ../README.md src/
-#cp ../README-fi.md src/
+cp ../README.md src/
+cp ../README-fi.md src/
 
 test -f VoikkoSpellService.dmg && rm VoikkoSpellService.dmg
 ./create-dmg \
@@ -12,9 +12,7 @@ test -f VoikkoSpellService.dmg && rm VoikkoSpellService.dmg
   --icon-size 100 \
 	--icon "VoikkoSpellService.app" 130 190 \
 	--hide-extension "VoikkoSpellService.app" \
-	--services-drop-link 430 190 \
+	--add-file README-fi.md src/README-fi.md 300 190 \
+	--add-file README.md src/README.md 420 190 \
   "VoikkoSpellService.dmg" \
   "src/"
-
-#	--add-file README-fi.md src/README-fi.md 150 260 \
-#	--add-file README.md src/README.md 250 260 \

@@ -18,7 +18,7 @@ Voikko projects homepage is at: http://voikko.puimula.org/
 Open Terminal and first install Homebrew and Cask.
 
 1. Install (Homebrew)[https://brew.sh/]: `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"”`
-1. Install voikkospellservice: `$ brew cask install voikkospellservice`
+1. Install voikkospellservice: `$ brew install --cask voikkospellservice`
 1. Voikko Spellchecking should be now available.
 
 ## Installation from dmg package

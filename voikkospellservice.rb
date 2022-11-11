@@ -1,21 +1,18 @@
 cask "voikkospellservice" do
   version "1.1.0b1"
-  sha256 "c1dec3cda95ed77de2e6246e5e16b4425f40c576a2409d272ea85fb2bc22f285"
+  sha256 "146f0f8a31e7b1b40a2fa8a6eec77fcdbf5553a7e66d32a16492afcb7b2e9b23"
 
-  url "https://github.com/walokra/osxspell/releases/download/#{version}/VoikkoSpellService-#{version}.dmg", verified: "github.com/walokra/osxspell/"
+  url "https://github.com/walokra/osxspell/releases/download/#{version}/VoikkoSpellService-#{version}.dmg",
+      verified: "github.com/walokra/osxspell/"
   name "VoikkoSpellService"
-  desc "Spell-checking service for macOS"
+  desc "Spell-checking service for Finnish"
   homepage "https://verteksi.net/lab/osxspell/"
-
-  livecheck do
-    url :url
-    strategy :github_latest
-    regex(%r{href=.*?/tag/(\d+(?:\.\d+.\S{0,2}[^"])+)["' >]}i)
-  end
 
   depends_on macos: ">= :big_sur"
 
   service "VoikkoSpellService.app"
 
   uninstall signal: ["TERM", "org.puimula.VoikkoSpellService"]
+
+  zap trash: ["~/Library/Spelling/Finnish"]
 end

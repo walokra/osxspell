@@ -20,6 +20,7 @@
 		36F8573614D86BA800A4157D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		36FAD756182ED0EB00766C62 /* libvoikko.1.arm64.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvoikko.1.arm64.dylib; path = Resources/voikko/libvoikko.1.arm64.dylib; sourceTree = "<group>"; };
 		DA88E9FC291985DF0054AF92 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = images.xcassets; path = VoikkoSpellService/images.xcassets; sourceTree = "<group>"; };
+		DAB775B3291ECC5D003EF0E7 /* VoikkoSpellService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = VoikkoSpellService.entitlements; path = VoikkoSpellService/VoikkoSpellService.entitlements; sourceTree = "<group>"; };
 		DAEE19D9291977C5007C9551 /* libvoikko.1.x86_64.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvoikko.1.x86_64.dylib; path = Resources/voikko/libvoikko.1.x86_64.dylib; sourceTree = "<group>"; };
 		DBBBE8440AAD59D400A45065 /* VoikkoSpellService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoikkoSpellService.h; sourceTree = "<group>"; };
 		DBBBE8450AAD59D400A45065 /* VoikkoSpellService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoikkoSpellService.m; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		DBBBE8360AAD593300A45065 = {
 			isa = PBXGroup;
 			children = (
+				DAB775B3291ECC5D003EF0E7 /* VoikkoSpellService.entitlements */,
 				DA88E9FC291985DF0054AF92 /* images.xcassets */,
 				362A4AAA11FF8381009F2792 /* version.xcconfig */,
 				3618B01111F7577800301285 /* voikko */,
@@ -254,11 +256,13 @@
 				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=macosx*]" = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = VoikkoSpellService/VoikkoSpellService.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 8X9ZUVVBWA;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
@@ -305,11 +309,13 @@
 				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=macosx*]" = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = VoikkoSpellService/VoikkoSpellService.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 8X9ZUVVBWA;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = s;
